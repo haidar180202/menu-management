@@ -7,7 +7,7 @@ import { AppDispatch, RootState } from "@/redux/store";
 import { fetchMenuItems, fetchMenuContent } from "@/redux/menuSlice";
 import axios from "axios";
 
-export default function MenuSystem({ isMobile = true }) {
+export default function MenuSystem() {
   const dispatch = useDispatch<AppDispatch>();
   const { items: menuData, selectedMenuContent, loading } = useSelector((state: RootState) => state.menu);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(["system-management"]));

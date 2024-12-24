@@ -1,8 +1,6 @@
-// src/types/menu.ts
-"use client"
 export interface MenuItem {
-    active: any;
-    highlight: any;
+    active: boolean;
+    highlight: boolean;
     icon: string;
     parentName: string;
     id: string;

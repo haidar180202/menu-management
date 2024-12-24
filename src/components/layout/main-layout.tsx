@@ -32,11 +32,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
     }
   }, [isSidebarMobile]);
 
-  // Prepare the dynamic class for Sidebar
-  const sidebarClassName = `fixed left-0 top-0 h-screen bg-[#18181B] text-gray-300 transition-transform duration-300 ease-in-out ${
-    isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-  } lg:translate-x-0 lg:relative lg:block lg:w-64`;
-
   return (
     <div className="min-h-screen bg-gray-100 grid lg:grid-cols-[auto]">
       {/* Provider wrapping the entire layout */}

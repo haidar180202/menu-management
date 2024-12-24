@@ -1,4 +1,5 @@
 // src/types/menu.ts
+"use client"
 export interface MenuItem {
     active: any;
     highlight: any;

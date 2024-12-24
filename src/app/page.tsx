@@ -1,4 +1,3 @@
-"use client";
 import MenuSystem from '@/components/menu-system';
 import MainLayout from '@/components/layout/main-layout';
 

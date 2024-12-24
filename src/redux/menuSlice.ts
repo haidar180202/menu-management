@@ -1,6 +1,7 @@
+import { MenuItem } from '@/types/menu';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { MenuItem } from '../types/menu';
+
 
 interface MenuState {
   items: MenuItem[];

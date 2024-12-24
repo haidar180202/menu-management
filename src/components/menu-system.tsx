@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { ChevronDown, ChevronRight, Edit, Plus, Trash } from "lucide-react";
-import type { MenuItem } from "@/types/menu";
+
 import { AppDispatch, RootState } from "@/redux/store";
 import { fetchMenuItems, fetchMenuContent } from "@/redux/menuSlice";
 import axios from "axios";
+import { MenuItem } from "@/types/menu";
 
 export default function MenuSystem() {
   const dispatch = useDispatch<AppDispatch>();
@@ -215,7 +216,9 @@ export default function MenuSystem() {
       <div className="md:mr-32">
         <div className="flex items-center gap-2 mb-4">
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white text-xl">📑</span>
+            <span className="text-white text-xl">
+              📑
+            </span>
           </div>
           <h1 className="text-2xl font-bold">Menu</h1>
         </div>
@@ -238,13 +241,13 @@ export default function MenuSystem() {
         <div className="flex justify-start items-center mb-4">
           <button
             onClick={handleExpandAll}
-            className="px-3 py-1.5 text-sm bg-gray-100 rounded mr-2"
+            className="px-3 py-1.5 text-sm bg-[#1D2939] text-gray-100  rounded-lg mr-2"
           >
             Expand All
           </button>
           <button
             onClick={() => setExpandedItems(new Set())}
-            className="px-3 py-1.5 text-sm bg-gray-100 rounded mr-2"
+            className="px-3 py-1.5 text-sm bg-gray-100 rounded-lg mr-2"
           >
             Collapse All
           </button>

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { ChevronDown, ChevronRight, Edit, Plus, Trash } from "lucide-react";

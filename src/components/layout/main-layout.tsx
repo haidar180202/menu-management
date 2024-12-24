@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Sidebar from "../ui/Sidebar";
+import { Provider } from "react-redux";
+import { store } from "@/redux/store";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -25,7 +27,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   useEffect(() => {
     if (isSidebarMobile) {
       setIsSidebarOpen(false);
-    }else{
+    } else {
       setIsSidebarOpen(true);
     }
   }, [isSidebarMobile]);
@@ -33,32 +35,32 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="min-h-screen bg-gray-100 grid lg:grid-cols-[auto]">
       {/* Sidebar */}
-      <Sidebar
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-        isMobileSidebar={isSidebarMobile} // Tambahkan properti ini
-        className={`fixed left-0 top-0 h-screen bg-[#18181B] text-gray-300 transition-transform duration-300 ease-in-out ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0 lg:relative lg:block lg:w-64`}
-      />
+      <Provider store={store}>
+        <Sidebar
+          isOpen={isSidebarOpen}
+          onClose={() => setIsSidebarOpen(false)}
+          isMobileSidebar={isSidebarMobile} // Tambahkan properti ini
+          className={`fixed left-0 top-0 h-screen bg-[#18181B] text-gray-300 transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            } lg:translate-x-0 lg:relative lg:block lg:w-64`}
+        />
 
-      {/* Main Content */}
-      <main
-        className={`transition-all duration-300 ease-in-out ${
-          isSidebarOpen ? "lg:ml-64" : ""
-        }`}
-      >
-        <div className="p-4">
-          {/* Toggle Button for Mobile */}
-          <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="mb-4 p-2 hover:bg-gray-200 rounded-lg lg:hidden"
-          >
-            ≡
-          </button>
-          {children}
-        </div>
-      </main>
+        {/* Main Content */}
+        <main
+          className={`transition-all duration-300 ease-in-out ${isSidebarOpen ? "lg:ml-64" : ""
+            }`}
+        >
+          <div className="p-4">
+            {/* Toggle Button for Mobile */}
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="mb-4 p-2 hover:bg-gray-200 rounded-lg lg:hidden"
+            >
+              ≡
+            </button>
+            {children}
+          </div>
+        </main>
+      </Provider>
     </div>
   );
 }

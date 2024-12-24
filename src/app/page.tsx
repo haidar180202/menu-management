@@ -1,5 +1,8 @@
+"use client"
 import MenuSystem from '@/components/menu-system';
 import MainLayout from '@/components/layout/main-layout';
+import { Provider } from 'react-redux';
+import {store} from '@/redux/store';
 
 export default function Home() {
   return (
@@ -17,6 +20,7 @@ export default function Home() {
         </div>
         <MenuSystem />
       </div>
+
     </MainLayout>
   );
 }

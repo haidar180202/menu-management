@@ -1,3 +1,4 @@
+"use client";
 import MenuSystem from '@/components/menu-system';
 import MainLayout from '@/components/layout/main-layout';
 
@@ -17,7 +18,6 @@ export default function Home() {
         </div>
         <MenuSystem />
       </div>
-
     </MainLayout>
   );
 }

@@ -29,7 +29,7 @@ export const fetchMenuItems = createAsyncThunk(
 
 export const fetchMenuContent = createAsyncThunk(
   'menu/fetchMenuContent',
-  async (menuId: string) => {
+  async (menuId: string | null) => {
     const response = await axios.get(`${API_URL}/menus/${menuId}`);
     return response.data.data;
   }

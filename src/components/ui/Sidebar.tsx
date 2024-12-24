@@ -37,9 +37,13 @@ export default function Sidebar({
             <FaCloud className="text-white mr-2" size={20} /> {/* Ikon awan */}
             <span className="text-xl font-bold text-white">CLOIT</span>
           </div>
-          {isMobileSidebar && (
+          {isMobileSidebar ? (
             <button onClick={onClose} className="text-gray-400 hover:text-white">
               ≡
+            </button>
+          ) : (
+            <button className="text-gray-400 hover:text-white">
+              
             </button>
           )}
         </div>

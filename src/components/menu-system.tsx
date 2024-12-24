@@ -29,7 +29,7 @@ export default function MenuSystem({ isMobile = true }) {
     if (selectedMenu) {
       dispatch(fetchMenuContent(selectedMenu));
     } else {
-      dispatch(fetchMenuContent(null)); // Ambil semua menu
+      dispatch(fetchMenuContent("")); // Ambil semua menu
     }
   }, [selectedMenu, dispatch]);
 
@@ -127,7 +127,7 @@ export default function MenuSystem({ isMobile = true }) {
       id: "",
       parentId: item.id,
       parentName: item.name,
-      depth: `${parseInt(item.depth.toString(), 10) + 1}`,
+      depth: `${(item.depth ?? 0) + 1}`,
       name: "",
     });
   };
@@ -138,7 +138,7 @@ export default function MenuSystem({ isMobile = true }) {
       id: item.id,
       parentId: item.parentId || "",
       parentName: item.parentName || "",
-      depth: item.depth.toString(),
+      depth: (item.depth ?? 0).toString(),
       name: item.name,
     });
   };

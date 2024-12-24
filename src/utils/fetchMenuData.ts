@@ -1,4 +1,4 @@
-import { MenuItem } from "@/components/types/menu";
+import { MenuItem } from "@/types/menu";
 import axios from "axios";
 
 

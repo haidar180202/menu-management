@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { ChevronDown, ChevronRight, Edit, Plus, Trash } from "lucide-react";
-import type { MenuItem } from "@/components/types/menu";
+import type { MenuItem } from "@/types/menu";
 import { AppDispatch, RootState } from "@/redux/store";
 import { fetchMenuItems, fetchMenuContent } from "@/redux/menuSlice";
 import axios from "axios";
